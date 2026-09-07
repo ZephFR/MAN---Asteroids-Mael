@@ -22,7 +22,7 @@ public class RecursiveSpace : MonoBehaviour
 
         else if (player.position.x < -bounds)
         {
-            player.position = new Vector3(-bounds, player.position.y, player.position.z);
+            player.position = new Vector3(bounds, player.position.y, player.position.z);
         }
 
         // Y axis
