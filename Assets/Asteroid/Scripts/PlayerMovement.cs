@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float maxSpeed;
     [SerializeField] private float rotationSpeed;
     private Rigidbody rb;
 
@@ -15,9 +16,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetButton("Vertical"))
         {
-            transform.Translate(0f, moveSpeed * Time.deltaTime, 0f);
+            //transform.Translate(0f, moveSpeed * Time.deltaTime, 0f);
+            rb.AddForce(transform.up * moveSpeed);
+        }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+
+        if(Input.GetButton("Horizontal"))
+        {   
+            rb.AddTorque(-transform.forward * rotationSpeed * horizontal);
         }
     }
 }
