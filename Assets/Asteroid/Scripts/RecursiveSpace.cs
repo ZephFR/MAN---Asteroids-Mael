@@ -3,6 +3,8 @@ using UnityEngine;
 public class RecursiveSpace : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private float buffer;
+
     private float bounds;
 
     private void Start()
@@ -16,23 +18,23 @@ public class RecursiveSpace : MonoBehaviour
         // X axis
         if (transform.position.x > bounds)
         {
-            transform.position = new Vector3(-bounds, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-bounds + buffer, transform.position.y, transform.position.z);
         }
 
         else if (transform.position.x < -bounds)
         {
-            transform.position = new Vector3(bounds, transform.position.y, transform.position.z);
+            transform.position = new Vector3(bounds - buffer, transform.position.y, transform.position.z);
         }
 
         // Y axis
         if (transform.position.y > bounds)
         {
-            transform.position = new Vector3(transform.position.x, -bounds, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -bounds + buffer, transform.position.z);
         }
 
         else if (transform.position.y < -bounds)
         {
-            transform.position = new Vector3(transform.position.x, bounds, transform.position.z);
+            transform.position = new Vector3(transform.position.x, bounds - buffer, transform.position.z);
         }
     }
 

@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float maxSpeed;
     [SerializeField] private float rotationSpeed;
     private Rigidbody rb;
 
