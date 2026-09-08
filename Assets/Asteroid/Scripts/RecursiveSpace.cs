@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class RecursiveSpace : MonoBehaviour
 {
-    [SerializeField] private Transform player;
     [SerializeField] private Camera cam;
     private float bounds;
 
@@ -15,25 +14,25 @@ public class RecursiveSpace : MonoBehaviour
     void Update()
     {
         // X axis
-        if (player.position.x > bounds)
+        if (transform.position.x > bounds)
         {
-            player.position = new Vector3(-bounds, player.position.y, player.position.z);
+            transform.position = new Vector3(-bounds, transform.position.y, transform.position.z);
         }
 
-        else if (player.position.x < -bounds)
+        else if (transform.position.x < -bounds)
         {
-            player.position = new Vector3(bounds, player.position.y, player.position.z);
+            transform.position = new Vector3(bounds, transform.position.y, transform.position.z);
         }
 
         // Y axis
-        if (player.position.y > bounds)
+        if (transform.position.y > bounds)
         {
-            player.position = new Vector3(player.position.x, -bounds, player.position.z);
+            transform.position = new Vector3(transform.position.x, -bounds, transform.position.z);
         }
 
-        else if (player.position.y < -bounds)
+        else if (transform.position.y < -bounds)
         {
-            player.position = new Vector3(player.position.x, bounds, player.position.z);
+            transform.position = new Vector3(transform.position.x, bounds, transform.position.z);
         }
     }
 
