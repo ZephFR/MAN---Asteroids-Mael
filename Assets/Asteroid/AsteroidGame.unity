@@ -273,8 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e86b27843bdff47b8de2a99bd50ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 3
-  maxSpeed: 0
+  moveSpeed: 6
   rotationSpeed: 0.75
 --- !u!54 &822223705
 Rigidbody:
@@ -316,6 +315,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecursiveSpace
   cam: {fileID: 209331086}
+  buffer: 0
+--- !u!114 &822223708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822223701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400cf0447380eb48b04dfce1f0c2790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shoot
+  projectilePrefab: {fileID: 3822373346557950414, guid: be21a7c12aa1f7a47a00ecdaf53493ad, type: 3}
 --- !u!1 &973128733
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 0.2
-  rotationSpeed: 0.2
+  rotationSpeed: 60
 --- !u!114 &1535555290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecursiveSpace
   cam: {fileID: 209331086}
+  buffer: 1
 --- !u!54 &1535555291
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -789,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   cam: {fileID: 209331086}
+  buffer: 0
 --- !u!4 &2031305167
 Transform:
   m_ObjectHideFlags: 0
@@ -812,6 +827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 464423944932070038, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1168052651439929471, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -855,6 +874,22 @@ PrefabInstance:
     - target: {fileID: 2014619483014473939, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
       propertyPath: m_Name
       value: Asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014619483014473939, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141079594309013021, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203639243508528051, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792417056945530925, guid: 2c59096e79424b6488b000b71c5f946a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -935,6 +970,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5315776698692897809, guid: 4395748c664c43245910be2deb80acb0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 822223706}
+    - targetCorrespondingSourceObject: {fileID: 5315776698692897809, guid: 4395748c664c43245910be2deb80acb0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 822223708}
   m_SourcePrefab: {fileID: 100100000, guid: 4395748c664c43245910be2deb80acb0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
