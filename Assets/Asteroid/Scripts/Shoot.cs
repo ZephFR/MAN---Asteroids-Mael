@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
-            Instantiate(projectilePrefab, transform);
+            Instantiate(projectilePrefab, transform.position, transform.rotation);
             t = shootCD;
             canShoot=false;
         }
