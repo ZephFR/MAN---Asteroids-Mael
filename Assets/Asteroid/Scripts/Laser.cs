@@ -22,6 +22,6 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = transform.position + Vector3.up * moveSpeed * Time.deltaTime;
+        transform.position = transform.position + transform.up * moveSpeed * Time.deltaTime;
     }
 }
